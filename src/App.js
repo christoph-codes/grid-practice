@@ -1,45 +1,34 @@
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import Working from './pages/Working';
+import Exercise1 from './pages/Exercise1';
+import Exercise2 from './pages/Exercise2';
+import Exercise3 from './pages/Exercise3';
+import Exercise4 from './pages/Exercise4';
+import Exercise5 from './pages/Exercise5';
 import './App.scss';
 
 function App() {
 	return (
-		<main className='App'>
-			<section className='working'>
-				<h2>Ultimate CSS Grid Course</h2>
-				<p>
-					This is the template you can use to follow along the course.
-				</p>
-				<article className='grid'>
-					<div>Item 1</div>
-					<div>Item 2</div>
-					<div>Item 3</div>
-					<div>Item 4</div>
-					<div>Item 5</div>
-					<div>Item 6</div>
-				</article>
-			</section>
-			<section className='exercise1'>
-				<h2>Excercise 1</h2>
-				<article className='grid'>
-					<div>Item 1</div>
-					<div>Item 2</div>
-					<div>Item 3</div>
-					<div>Item 4</div>
-				</article>
-			</section>
-			<section className='exercise2'>
-				<h2>Excercise 2</h2>
-				<article className='grid'>
-					<div>Item 1</div>
-					<div>Item 2</div>
-					<div>Item 3</div>
-					<div>Item 4</div>
-					<div>Item 5</div>
-					<div>Item 6</div>
-					<div>Item 7</div>
-					<div>Item 8</div>
-				</article>
-			</section>
-		</main>
+		<BrowserRouter>
+			<main className='App'>
+				<header>
+					<Link to='/'>Home</Link>
+					<Link to='/exercise1'>Exercise 1</Link>
+					<Link to='/exercise2'>Exercise 2</Link>
+					<Link to='/exercise3'>Exercise 3</Link>
+					<Link to='/exercise4'>Exercise 4</Link>
+					<Link to='/exercise5'>Exercise 5</Link>
+				</header>
+				<Switch>
+					<Route exact path='/exercise1' component={Exercise1} />
+					<Route exact path='/exercise2' component={Exercise2} />
+					<Route exact path='/exercise3' component={Exercise3} />
+					<Route exact path='/exercise4' component={Exercise4} />
+					<Route exact path='/exercise5' component={Exercise5} />
+					<Route exact path='/' component={Working} />
+				</Switch>
+			</main>
+		</BrowserRouter>
 	);
 }
 

@@ -1,0 +1,9 @@
+.Exercise5 {
+	.grid {
+		width: 540px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: repeat(2, minmax(100px, 1fr));
+	}
+}
